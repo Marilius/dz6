@@ -40,7 +40,10 @@ double root(double (*f)(double), double (*g)(double), double a, double b, double
   double derivative1 = derivative(f, x, 0.01);//нам обещали сохранение знака на всём отрезке
   double derivative2 = derivative(g, x, 0.01);
   
-  if (derivative1*derivative2 < 0)//идем слева
+  // d1 > 0, d2 > 0 , вниз - слева
+  // f((a + b)/2) + (f(a) + f(b))/2 
+  
+  if ((derivative1*derivative2 < 0) && (f((a + b)/2) - g((a + b)/2) + (f(a) + f(b))/2 - (g(a) + g(b))/2))//идем справа
   {
     x = a;
     x_pred = b;
@@ -51,7 +54,7 @@ double root(double (*f)(double), double (*g)(double), double a, double b, double
       x = x_pred - (f(x_pred) - g(x_pred))*(x_pred - b)/(f(x_pred) - g(x_pred) - f(b) + g(b));// метод хорд
     }
   }
-  else// справа
+  else// слева
   {
     x = b;
     x_pred = a;
