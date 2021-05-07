@@ -47,6 +47,7 @@ SECTION .text
 ;    ret
 
 ; 3 * (0.5 / (x + 1) + 1)
+GLOBAL f1
 f1:
     push ebp
     mov ebp, esp
@@ -63,6 +64,7 @@ f1:
     ret
 
 ; 2.5 * x − 9.5
+GLOBAL f2
 f2:
     push ebp
     mov ebp, esp
@@ -75,6 +77,7 @@ f2:
     ret
 
 ; 5 / x
+GLOBAL f3
 f3:
     push ebp
     mov ebp, esp
