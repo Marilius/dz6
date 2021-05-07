@@ -104,6 +104,7 @@ int main(int argc, char **argv)
   //ps по условию x > 0
   int keys[2] = {0, 0};
   int i = 1;
+  if (argc > 1){
         if(strcmp("-help", argv[i]) == 0)// help option
         {
             printf("-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
@@ -167,6 +168,7 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
             	return 0;
             }
         }
+    }
     else
     {
         double r1 = root(f1, f2, -3, 7, 0.001);//first root
