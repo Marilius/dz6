@@ -106,7 +106,7 @@ int main(int argc, char **argv)
   int i = 1;
         if(strcmp("-help", argv[i]) == 0)// help option
         {
-            printf("-run\t to run programm and do calc\n-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
+            printf("run\t to run programm and do calc\n-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
 to test root args must be: root n a b eps;\n n - number of set of funcs (1 - f1 f2, 2 - f1 f3, 3 - f2 f3)\nto test integral args must be: integral n b eps;\n n - number of func (1 - f1, 2 - f1, 3 - f3)\n\
 to run on prepared test args must be: -test prepared n\n n - index of test\n");
             return 0;
@@ -166,7 +166,7 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
                 	printf("result is %lf\n", integral(f3_test, 3, 7, 0.001));//wolframalpha.com: 4.2365
             	return 0;
             }
-            if(strcmp("-run", argv[i]) == 0)
+            if(strcmp("run", argv[i]) == 0)
 	    {
 		double r1 = root(f1, f2, -3, 7, 0.001);//first root
         	double r2 = root(f1, f3, 0.5, 7, 0.001);//second root
