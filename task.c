@@ -108,7 +108,7 @@ int main(int argc, char **argv)
         if(strcmp("-help", argv[i]) == 0)// help option
         {
             printf("-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
-to test root args must be: root i j a b eps;\nto test integral args must be: integral n b eps;\n n - number of set of funcs (1 - f1 f2, 2 - f1 f3, 3 - f2 - f3)\n\
+to test root args must be: root n a b eps;\n n - number of set of funcs (1 - f1 f2, 2 - f1 f3, 3 - f2 - f3)\nto test integral args must be: integral n b eps;\n n - number of set of func (1 - f1, 2 - f1, 3 - f3)\n\
 to run on prepared test args must be: -test prepared n\n n - index of test\n");
             return 0;
         }
