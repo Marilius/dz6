@@ -167,6 +167,7 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
                 	printf("result is %lf\n", integral(f3_test, 3, 7, 0.001));//wolframalpha.com: 4.2365
             	return 0;
             }
+	    }
             if(strcmp("run", argv[i]) == 0)
 	    {
 		double r1 = root(f1, f2, -3, 7, 0.001);//first root
@@ -181,6 +182,5 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
         		printf("num of iterations is %d\n", iterations);//if key -iters was used
 	    }
         }
-}
     return 0;
 }
