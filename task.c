@@ -108,8 +108,8 @@ int main(int argc, char **argv)
         if(strcmp("-help", argv[i]) == 0)// help option
         {
             printf("-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
-to test root args must be: root i j a b eps;\nto test integral args must be: integral i a b eps;\n\
-to run on prepared test args must be: n\n n - index of test\n");
+to test root args must be: root i j a b eps;\nto test integral args must be: integral n b eps;\n n - number of set of funcs (1 - f1 f2, 2 - f1 f3, 3 - f2 - f3)\n\
+to run on prepared test args must be: -test prepared n\n n - index of test\n");
             return 0;
         }
         if(strcmp("-iters", argv[i]) == 0)// iters option
@@ -150,20 +150,23 @@ to run on prepared test args must be: n\n n - index of test\n");
                 if(p == 3)
                     printf("result is %lf\n", integral(f3_test, a, b, eps));
             }
-            int p = atoi(argv[i]);// prepared tests
-            if (p == 1)
-                printf("result is %lf\n", root(f1_test, f2_test, -3, 7, 0.001));//wolframalpha.com: x == 5.09839
-            if (p == 2)
-                printf("result is %lf\n", root(f1_test, f3_test, 0.5, 7, 0.001)); //wolframalpha.com: x == 1.37701
-            if (p == 3)
-                printf("result is %lf\n", root(f2_test, f3_test, 0.5, 7, 0.001));//wolframalpha.com: x == 4.26854
-            if (p == 4)
-                printf("result is %lf\n", integral(f1_test, 3, 7, 0.001));//wolframalpha.com: 13.0397
-            if (p == 5)
-                printf("result is %lf\n", integral(f2_test, 3, 7, 0.001)); //wolframalpha.com: 12
-            if (p == 6)
-                printf("result is %lf\n", integral(f3_test, 3, 7, 0.001));//wolframalpha.com: 4.2365
-            return 0;
+            if(strcmp("prepared", argv[++i]) == 0)// prepared tests
+            {
+            	int p = atoi(argv[i]);// prepared tests
+            	if (p == 1)
+                	printf("result is %lf\n", root(f1_test, f2_test, -3, 7, 0.001));//wolframalpha.com: x == 5.09839
+            	if (p == 2)
+                	printf("result is %lf\n", root(f1_test, f3_test, 0.5, 7, 0.001)); //wolframalpha.com: x == 1.37701
+            	if (p == 3)
+                	printf("result is %lf\n", root(f2_test, f3_test, 0.5, 7, 0.001));//wolframalpha.com: x == 4.26854
+            	if (p == 4)
+                	printf("result is %lf\n", integral(f1_test, 3, 7, 0.001));//wolframalpha.com: 13.0397
+            	if (p == 5)
+                	printf("result is %lf\n", integral(f2_test, 3, 7, 0.001)); //wolframalpha.com: 12
+            	if (p == 6)
+                	printf("result is %lf\n", integral(f3_test, 3, 7, 0.001));//wolframalpha.com: 4.2365
+            	return 0;
+            }
         }
     }
     double r1 = root(f1, f2, -3, 7, 0.001);//first root
