@@ -127,14 +127,20 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
                 if(p == 1)
                 {
                     printf("result is %lf\n", root(f1_test, f2_test, a, b, eps));
+			if(keys[0] == 1)// -iters
+        		printf("num of iterations is %d\n", iterations);//if key -iters was used
                 }
                 if(p == 2)
                 {
                     printf("result is %lf\n", root(f1_test, f3_test, a, b, eps));
+			if(keys[0] == 1)// -iters
+        		printf("num of iterations is %d\n", iterations);//if key -iters was used
                 }
                 if(p == 3)
                 {
                     printf("result is %lf\n", root(f2_test, f3_test, a, b, eps));
+			if(keys[0] == 1)// -iters
+        		printf("num of iterations is %d\n", iterations);//if key -iters was used
                 }
             }
             if(strcmp("integral", argv[i]) == 0)// test integral
