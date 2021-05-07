@@ -150,7 +150,7 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
                 if(p == 3)
                     printf("result is %lf\n", integral(f3_test, a, b, eps));
             }
-            if(strcmp("prepared", argv[++i]) == 0)// prepared tests
+            if(strcmp("prepared", argv[i]) == 0)// prepared tests
             {
             	int p = atoi(argv[++i]);// prepared tests
             	if (p == 1)
