@@ -103,7 +103,8 @@ int main(int argc, char **argv)
 {
   //ps по условию x > 0
   int keys[2] = {0, 0};
-  int i = 1;
+  for (int i = 1; i < argc; i++)
+	{
         if(strcmp("-help", argv[i]) == 0)// help option
         {
             printf("run\t to run programm and do calc\n-help\tdescribe all options\n-iters\tprint num of iterations\n-roots\tprint roots\n-test args\ttest this program\n\
@@ -180,5 +181,6 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
         		printf("num of iterations is %d\n", iterations);//if key -iters was used
 	    }
         }
+}
     return 0;
 }
