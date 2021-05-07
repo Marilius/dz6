@@ -169,17 +169,18 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
             }
         }
     }
-    double r1 = root(f1, f2, -3, 7, 0.001);//first root
-    double r2 = root(f1, f3, 0.5, 7, 0.001);//second root
-    double r3 = root(f2, f3, 0.5, 7, 0.001);//third root
-    double s1 = integral(f1, 3, 7, 0.001);//first integral
-    double s2 = integral(f2, 3, 7, 0.001);//second integral
-    double s3 = integral(f3, 3, 7, 0.001);//third integral
-    if(keys[1] == 1)// -roots
-        printf("roots are \n%lf\n%lf\n%lf\n", r1, r2, r3);
-    if(keys[0] == 1)// -iters
-        printf("num of iterations is %d\n", iterations);//if key -iters was used
+    else
+    {
+        double r1 = root(f1, f2, -3, 7, 0.001);//first root
+        double r2 = root(f1, f3, 0.5, 7, 0.001);//second root
+    	double r3 = root(f2, f3, 0.5, 7, 0.001);//third root
+    	double s1 = integral(f1, 3, 7, 0.001);//first integral
+    	double s2 = integral(f2, 3, 7, 0.001);//second integral
+    	double s3 = integral(f3, 3, 7, 0.001);//third integral
+    	if(keys[1] == 1)// -roots
+        	printf("roots are \n%lf\n%lf\n%lf\n", r1, r2, r3);
+    	if(keys[0] == 1)// -iters
+        	printf("num of iterations is %d\n", iterations);//if key -iters was used
+    }
     return 0;
-
-  return 0;
 }
