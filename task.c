@@ -152,7 +152,7 @@ to run on prepared test args must be: -test prepared n\n n - index of test\n");
             }
             if(strcmp("prepared", argv[++i]) == 0)// prepared tests
             {
-            	int p = atoi(argv[i]);// prepared tests
+            	int p = atoi(argv[++i]);// prepared tests
             	if (p == 1)
                 	printf("result is %lf\n", root(f1_test, f2_test, -3, 7, 0.001));//wolframalpha.com: x == 5.09839
             	if (p == 2)
